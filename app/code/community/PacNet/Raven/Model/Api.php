@@ -50,6 +50,8 @@ class PacNet_Raven_Model_Api extends Mage_Payment_Model_Method_Cc
     protected $_canUseForMultishipping  = true;
     protected $_canSaveCc               = false;
 
+	protected $_infoBlockType = 'pacnet_raven/Api_Info';
+
     protected $_ravenConfig;
     protected $_ravenService;
     protected $_trackingNumber;

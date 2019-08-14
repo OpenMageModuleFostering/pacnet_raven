@@ -33,16 +33,11 @@
  */
 
 /**
- * Template for displaying payment information in the admin order
+ * Template for displaying payment information on the invoice PDF
  *
- * @see PacNet_Raven_Block_MarketDirect_Info
+ * @see PacNet_Raven_Block_Api_Info
  */
 ?>
+
 <?php
-echo $this->getMethod()->getTitle() . '<br/>';
-if ($this->getInfo()->getLastTransId() == '') {
-	echo Mage::helper('pacnet_raven')->__('Payment has not been processed yet.') . '<br/>';
-} else {
-	echo Mage::helper('pacnet_raven')->__('Credit Card Type: %s', $this->htmlEscape($this->getInfo()->getCcType())) . '<br/>';
-	echo Mage::helper('pacnet_raven')->__('Raven Transaction ID: %s', $this->htmlEscape($this->getInfo()->getLastTransId())) . '<br/>';
-}
+echo $this->getMethod()->getTitle();

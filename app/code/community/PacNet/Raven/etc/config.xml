@@ -36,7 +36,7 @@
 <config>
     <modules>
         <PacNet_Raven>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </PacNet_Raven>
     </modules>
     <global>
