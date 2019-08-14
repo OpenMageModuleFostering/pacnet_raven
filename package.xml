@@ -1,43 +1,46 @@
 <?xml version="1.0"?>
 <package>
     <name>pacnet_raven</name>
-    <version>0.1.0</version>
+    <version>1.0.0</version>
     <stability>stable</stability>
-    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License v. 3.0 (OSL-3.0)</license>
+    <license uri="https://opensource.org/licenses/MIT">MIT License (MIT)</license>
     <channel>community</channel>
     <extends/>
-    <summary>If you have a PacNet merchant account, this Magento extension will allow you to securely accept card payments through your Magento e-commerce site.   </summary>
-    <description>Features:&#xD;
+    <summary>PacNet's Raven Payment Gateway extension integrates Raven API and/or&#xD;
+MarketDirect payments to your Magento store.</summary>
+    <description>PCI DSS compliance is NOT required when using Raven MarketDirect as the&#xD;
+payment will be captured and processed on the PacNet secure payment portal.&#xD;
+If you are using Raven API, PCI DSS compliance is mandatory to ensure the&#xD;
+security and privacy of your customer's transactions.&#xD;
 &#xD;
-&#x2022; Accept any Visa or MasterCard branded or co-branded card payment. &#xD;
-&#x2022; Set prices in the local currency of your customers.  Customers see your merchant descriptor and the exact amount that they agreed to pay with no currency conversion on their card statement.    &#xD;
-&#x2022; No matter what currencies you accept from customers, you enjoy fast access to funds in a major currency of your choice.&#xD;
-&#x2022; Debit, Pre-authorize and Refund transactions supported.  Further transaction types available in Raven Online. &#xD;
-&#x2022; Payment Reporting and Management available through Raven Online &#xD;
-&#x2022; Card Data Tokenization allows for secure processing of refunds or further customer transactions using Raven Online&#xD;
-&#x2022; Risk-flagging and management available through your PacNet account administration.  Contact Client Services for implementation. &#xD;
-&#x2022; Level 1 PCI compliant &#xD;
+== API features ==&#xD;
+- Debit (preauthorise and capture) payment type only&#xD;
+- Debug mode&#xD;
 &#xD;
-Accepting cards using this extension requires a PacNet merchant account. Want to process debit and credit cards from around the world, but don&#x2019;t yet have an account with PacNet?  &#xD;
+== MarketDirect features ==&#xD;
+- Debit and preauthorise payment types&#xD;
+- Email a Raven payment receipt to the customer&#xD;
+- Hosted payment page customisation&#xD;
+- Google Analytics compatibility&#xD;
+- Fulfillment notifications&#xD;
+- Debug mode&#xD;
 &#xD;
-Please visit us at  www.pacnetservices.com  for more details. &#xD;
+== Getting Started ==&#xD;
+Before you start you will require the following Raven credentials:&#xD;
+- Username/Submitted ID&#xD;
+- Shared Secret&#xD;
+- Payment routing Number (PRN)&#xD;
 &#xD;
-Please have your PacNet UserName, Shared Secret, and Payment Routing Number ready to complete the setup.  &#xD;
-&#xD;
-Your PacNet Client Service Representative will be happy confirm the above details if required.  &#xD;
-&#xD;
-North America  +1 604 689 0399 / clientsupport@pacnetservices.com&#xD;
-&#xD;
-Europe: +353 61 714 360 / shannon.clientsupport@pacnetservices.com&#xD;
-</description>
-    <notes>Version number:  0.1.0&#xD;
-Stability: Stable&#xD;
-&#xD;
-</notes>
-    <authors><author><name>Christine K </name><user>PacN3t</user><email>christinek@pacnetservices.com</email></author></authors>
-    <date>2015-08-13</date>
-    <time>19:27:14</time>
-    <contents><target name="magecommunity"><dir name="."><dir name="app"><dir name="code"><file name="community" hash=""/></dir></dir></dir></target><target name="magedesign"><dir name="."><dir name="app"><file name="design" hash=""/></dir></dir></target><target name="magelib"><dir name="."><file name="lib" hash=""/></dir></target><target name="magemedia"><dir name="."><file name="media" hash=""/></dir></target><target name="mageweb"><dir name="."><file name="." hash="d41d8cd98f00b204e9800998ecf8427e"/></dir></target><target name="mage"><dir name="."><file name="." hash="d41d8cd98f00b204e9800998ecf8427e"/></dir></target></contents>
+== Reference ==&#xD;
+Raven Documentation: https://pacnetservices.com/documentation</description>
+    <notes>## [1.0.0] - 2016-03-27&#xD;
+### Initial Release&#xD;
+- Raven MarketDirect payments&#xD;
+- Merged Raven API payments</notes>
+    <authors><author><name>Joerg Beekmann</name><user>PacN3t</user><email>christinek@pacnetservices.com</email></author></authors>
+    <date>2016-04-29</date>
+    <time>17:37:14</time>
+    <contents><target name="magecommunity"><dir name="PacNet"><dir name="Raven"><dir name="Block"><dir name="MarketDirect"><file name="Form.php" hash="81c8fb9acda4e63bd5a2be1446f4faef"/><file name="Info.php" hash="85546f1f005e91bcd82312ee8e19fc1d"/></dir></dir><file name="Exception.php" hash="1f2b1c9a471ca584ef53616d7effa2fd"/><dir name="Helper"><file name="Data.php" hash="744aaafe84165b840e7672bccb2a5869"/></dir><dir name="Model"><dir name="Api"><dir name="Service"><dir name="Request"><file name="Abstract.php" hash="0fbd81ae4098922e2a322ea34e654be9"/><file name="Exception.php" hash="53888eafadceafe4fd78dc4d8feed5cf"/><file name="Hello.php" hash="8d3510efc32a10fabefae86c4688b62e"/><file name="Response.php" hash="e4c1c71c3cbcb399d5cb7f4866778e9d"/><file name="Submit.php" hash="d531f90a7b2d4d96968f8c2257d3713e"/></dir><dir name="Response"><dir name="Codes"><file name="CVV2.php" hash="fdd42b390e7f9be7bd00575f555b2eae"/><file name="Status.php" hash="a3dde758331bd59ab2c2bb3f7e55f5c6"/></dir><file name="Exception.php" hash="0dd0b17cf0f792a376eb67b219eba28d"/></dir><file name="Response.php" hash="0e81ca74231e438bc6eeb3f177a2a637"/></dir><file name="Service.php" hash="42865ecc90b97193238721537aa52f0c"/><dir name="Source"><file name="Paymentaction.php" hash="d287e9045482c542f36e19c1013eeb72"/></dir></dir><file name="Api.php" hash="3c4b9c4e92ba91c70d1868ff1d92883a"/><dir name="MarketDirect"><file name="Abstract.php" hash="ce4549825dcade10cc7a2589bb59f5c0"/><file name="Response.php" hash="f270410937acb6fd54ba17a4cec15ff4"/><dir name="Source"><file name="PaymentType.php" hash="0f945b717446c5d5b099a2dbc2df53be"/></dir><file name="Transaction.php" hash="07b78e678e753a3a0fbf4ebda05adf9c"/></dir><file name="MarketDirect.php" hash="470da58172d76c550c973cca7727178f"/></dir><dir name="controllers"><file name="MarketdirectController.php" hash="ddf05372520d4a8c349d4d7ddf08cf63"/></dir><dir name="etc"><file name="config.xml" hash="eb35a9b158b39d417b3680462cc530bf"/><file name="system.xml" hash="97b94c67e58d6ddfc1111393ec597d72"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="pacnet"><dir name="raven"><dir name="marketdirect"><file name="info.phtml" hash="dc5ad9843268f2af5370ef9dceb985f4"/><dir name="pdf"><file name="info.phtml" hash="27d2865889a3be0074d80d310e29799a"/></dir></dir></dir></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><dir name="pacnet"><dir name="raven"><file name="marketdirect.xml" hash="527057af370e49fa25a7c1cde04be74e"/></dir></dir></dir><dir name="template"><dir name="pacnet"><dir name="raven"><dir name="marketdirect"><file name="form.phtml" hash="27a19d4b2b3bf12e560750768d1895fd"/><file name="redirect.phtml" hash="21da7f23c7b6e7e63f102335db2c2e10"/></dir></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="PacNet_Raven.xml" hash="e3909b1c66130c3db85996d17744b5da"/></dir></target><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="pacnet"><dir name="images"><file name="ajax-loader.gif" hash="f48ee069890b16455c3ddcacee9b5f75"/></dir></dir></dir></dir></dir></target></contents>
     <compatible/>
-    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php><package><name>pacnet_raven</name><channel>community</channel><min>1.5.0</min><max>1.9.0</max></package></required></dependencies>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
 </package>

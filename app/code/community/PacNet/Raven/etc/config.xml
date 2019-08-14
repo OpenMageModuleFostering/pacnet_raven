@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * PacNet's Raven Payment Gateway
+ *
+ * MIT License
+ *
+ * Copyright (c) 2016, PacNet Services Ltd
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * @category    PacNet
+ * @package     PacNet_Raven
+ * @author      Joerg Beekmann <joerg@deepcovelabs.com>
+ * @link        https://pacnetservices.com/
+ * @copyright   Copyright (c) 2016, PacNet Services Ltd
+ * @license     https://opensource.org/licenses/MIT MIT License
+ */
+-->
+<config>
+    <modules>
+        <PacNet_Raven>
+            <version>1.0.0</version>
+        </PacNet_Raven>
+    </modules>
+    <global>
+        <models>
+            <pacnet_raven>
+                <class>PacNet_Raven_Model</class>
+            </pacnet_raven>
+        </models>
+        <blocks>
+            <pacnet_raven>
+                <class>PacNet_Raven_Block</class>
+            </pacnet_raven>
+        </blocks>
+        <helpers>
+            <pacnet_raven>
+                <class>PacNet_Raven_Helper</class>
+            </pacnet_raven>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <pacnet_raven_marketdirect>
+                <model>pacnet_raven/MarketDirect</model>
+                <active>0</active>
+                <debug>0</debug>
+                <title>Credit Card (Raven MarketDirect)</title>
+                <order_status>pending</order_status>
+                <payment_type>sale</payment_type>
+                <submitter></submitter>
+                <shared_secret></shared_secret>
+                <prn></prn>
+                <email_receipt>0</email_receipt>
+                <custom_title></custom_title>
+                <custom_colour>#206D82</custom_colour>
+                <custom_logo></custom_logo>
+                <custom_google_analytics></custom_google_analytics>
+                <enable_fulfillment_notification>0</enable_fulfillment_notification>
+                <fulfillment_url></fulfillment_url>
+                <retry_fulfillment_notification>0</retry_fulfillment_notification>
+                <allowspecific>0</allowspecific>
+                <sort_order>100</sort_order>
+            </pacnet_raven_marketdirect>
+            <pacnet_raven_api>
+                <model>pacnet_raven/Api</model>
+                <active>0</active>
+                <debug>0</debug>
+                <order_status>pending</order_status>
+                <title>Credit Card (Raven API)</title>
+                <cctypes>AE,VI,MC,DI</cctypes>
+                <payment_action>authorize_capture</payment_action>
+                <allowspecific>0</allowspecific>
+            </pacnet_raven_api>
+        </payment>
+    </default>
+    <frontend>
+        <routers>
+            <pacnet_raven>
+                <use>standard</use>
+                <args>
+                    <module>PacNet_Raven</module>
+                    <frontName>pacnet-raven</frontName>
+                </args>
+            </pacnet_raven>
+        </routers>
+        <layout>
+            <updates>
+                <pacnet_raven>
+                    <file>pacnet/raven/marketdirect.xml</file>
+                </pacnet_raven>
+            </updates>
+        </layout>
+    </frontend>
+</config>

@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * PacNet's Raven Payment Gateway
+ *
+ * MIT License
+ *
+ * Copyright (c) 2016, PacNet Services Ltd
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * @category    PacNet
+ * @package     PacNet_Raven
+ * @author      Joerg Beekmann <joerg@deepcovelabs.com>
+ * @link        https://pacnetservices.com/
+ * @copyright   Copyright (c) 2016, PacNet Services Ltd
+ * @license     https://opensource.org/licenses/MIT MIT License
+ */
+-->
+<config>
+<sections>
+    <payment>
+        <groups>
+            <pacnet_raven_marketdirect translate="label comment" module="pacnet_raven">
+                <label>Raven MarketDirect</label>
+                <frontend_type>text</frontend_type>
+                <sort_order>100</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>1</show_in_website>
+                <show_in_store>1</show_in_store>
+                <fields>
+                    <active translate="label">
+                        <label>Enabled</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_yesno</source_model>
+                        <sort_order>1</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </active>
+                    <debug translate="label">
+                        <label>Debug</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_yesno</source_model>
+                        <sort_order>2</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </debug>
+                    <title translate="label">
+                        <label>Title</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>3</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </title>
+                    <order_status translate="label">
+                        <label>New Order Status</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_order_status</source_model>
+                        <sort_order>4</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </order_status>
+                    <payment_type>
+                        <label>Payment Type</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>pacnet_raven/MarketDirect_Source_PaymentType</source_model>
+                        <sort_order>5</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </payment_type>
+                    <submitter translate="label">
+                        <label>Submitter ID</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>6</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </submitter>
+                    <shared_secret translate="label">
+                        <label>Shared Secret</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>7</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </shared_secret>
+                    <prn translate="label">
+                        <label>Payment Routing Number (PRN)</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>8</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </prn>
+                    <email_receipt>
+                        <label>Email Receipt</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_yesno</source_model>
+                        <sort_order>9</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </email_receipt>
+                    <custom_title translate="label">
+                        <label>HPP Title</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>10</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </custom_title>
+                    <custom_colour translate="label">
+                        <label>HPP Colour</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>11</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </custom_colour>
+                    <custom_logo translate="label">
+                        <label>HPP Logo</label>
+                        <frontend_type>image</frontend_type>
+                        <backend_model>adminhtml/system_config_backend_image</backend_model>
+                        <upload_dir config="system/filesystem/media" scope_info="1">pacnet</upload_dir>
+                        <base_url type="media" scope_info="1">pacnet</base_url>
+                        <comment>Allowed types: jpg, jpeg, gif, png (150px x 100px)</comment>
+                        <sort_order>12</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </custom_logo>
+                    <custom_google_analytics>
+                        <label>HPP Google Analytics A/C No</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>13</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </custom_google_analytics>
+                    <enable_fulfillment_notification>
+                        <label>Enable Fulfillment Notification</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_yesno</source_model>
+                        <sort_order>14</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </enable_fulfillment_notification>
+                    <fulfillment_url>
+                        <label>Fulfillment URL</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>15</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <depends><enable_fulfillment_notification>1</enable_fulfillment_notification></depends>
+                    </fulfillment_url>
+                    <retry_fulfillment_notification>
+                        <label>Retry Filfillment Notification</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_yesno</source_model>
+                        <sort_order>16</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <depends><enable_fulfillment_notification>1</enable_fulfillment_notification></depends>
+                    </retry_fulfillment_notification>
+                    <allowspecific translate="label">
+                        <label>Payment Applicable From</label>
+                        <frontend_type>select</frontend_type>
+                        <sort_order>17</sort_order>
+                        <source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </allowspecific>
+                    <specificcountry translate="label">
+                        <label>Countries Payment Applicable From</label>
+                        <frontend_type>multiselect</frontend_type>
+                        <sort_order>18</sort_order>
+                        <source_model>adminhtml/system_config_source_country</source_model>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                        <depends><allowspecific>1</allowspecific></depends>
+                    </specificcountry>
+                    <sort_order translate="label">
+                        <label>Sort Order</label>
+                        <frontend_type>text</frontend_type>
+                    </sort_order>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                </fields>
+            </pacnet_raven_marketdirect>
+            <pacnet_raven_api translate="label" module="pacnet_raven">
+                <label>Raven API</label>
+                <sort_order>101</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>1</show_in_website>
+                <show_in_store>0</show_in_store>
+                <fields>
+                    <active translate="label">
+                        <label>Enabled</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_yesno</source_model>
+                        <sort_order>1</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </active>
+                    <debug translate="label">
+                        <label>Debug</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_yesno</source_model>
+                        <sort_order>2</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </debug>
+                    <title translate="label">
+                        <label>Title</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>3</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </title>
+                    <order_status translate="label">
+                        <label>New order status</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_order_status</source_model>
+                        <sort_order>5</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </order_status>
+                    <username translate="label">
+                        <label>Username</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>6</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </username>
+                    <shared_secret translate="label">
+                        <label>Shared Secret</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>7</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </shared_secret>
+                    <prn translate="label">
+                        <label>Payment Routing Number (PRN)</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>8</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </prn>
+                    <cctypes translate="label">
+                        <label>Credit Card Types</label>
+                        <frontend_type>multiselect</frontend_type>
+                        <source_model>adminhtml/system_config_source_payment_cctype</source_model>
+                        <sort_order>9</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </cctypes>
+                    <payment_action>
+                        <label>Payment Action</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>pacnet_raven/Api_Source_Paymentaction</source_model>
+                        <sort_order>10</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>0</show_in_store>
+                    </payment_action>
+                </fields>
+            </pacnet_raven_api>
+        </groups>
+    </payment>
+</sections>
+</config>

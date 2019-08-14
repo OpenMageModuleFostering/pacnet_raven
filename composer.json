@@ -1,12 +1,13 @@
 {
     "name": "OpenMageModuleFostering/pacnet_raven",
     "type": "magento-module",
-    "license": "Open-Software-License-v.-3.0-(OSL-3.0)",
+    "license": "MIT-License-(MIT)",
     "homepage": "",
-    "description": "If you have a PacNet merchant account, this Magento extension will allow you to securely accept card payments through your Magento e-commerce site.   ",
+    "description": "PacNet's Raven Payment Gateway extension integrates Raven API and/or
+MarketDirect payments to your Magento store.",
     "authors": [
     {
-        "name": "Christine K ",
+        "name": "Joerg Beekmann",
         "email": "christinek@pacnetservices.com"
     }
 ],
