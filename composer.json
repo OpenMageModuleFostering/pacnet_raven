@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/pacnet_raven",
+    "type": "magento-module",
+    "license": "Open-Software-License-v.-3.0-(OSL-3.0)",
+    "homepage": "",
+    "description": "If you have a PacNet merchant account, this Magento extension will allow you to securely accept card payments through your Magento e-commerce site.   ",
+    "authors": [
+    {
+        "name": "Christine K ",
+        "email": "christinek@pacnetservices.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

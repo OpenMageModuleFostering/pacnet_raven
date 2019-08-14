@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<package>
+    <name>pacnet_raven</name>
+    <version>0.1.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License v. 3.0 (OSL-3.0)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>If you have a PacNet merchant account, this Magento extension will allow you to securely accept card payments through your Magento e-commerce site.   </summary>
+    <description>Features:&#xD;
+&#xD;
+&#x2022; Accept any Visa or MasterCard branded or co-branded card payment. &#xD;
+&#x2022; Set prices in the local currency of your customers.  Customers see your merchant descriptor and the exact amount that they agreed to pay with no currency conversion on their card statement.    &#xD;
+&#x2022; No matter what currencies you accept from customers, you enjoy fast access to funds in a major currency of your choice.&#xD;
+&#x2022; Debit, Pre-authorize and Refund transactions supported.  Further transaction types available in Raven Online. &#xD;
+&#x2022; Payment Reporting and Management available through Raven Online &#xD;
+&#x2022; Card Data Tokenization allows for secure processing of refunds or further customer transactions using Raven Online&#xD;
+&#x2022; Risk-flagging and management available through your PacNet account administration.  Contact Client Services for implementation. &#xD;
+&#x2022; Level 1 PCI compliant &#xD;
+&#xD;
+Accepting cards using this extension requires a PacNet merchant account. Want to process debit and credit cards from around the world, but don&#x2019;t yet have an account with PacNet?  &#xD;
+&#xD;
+Please visit us at  www.pacnetservices.com  for more details. &#xD;
+&#xD;
+Please have your PacNet UserName, Shared Secret, and Payment Routing Number ready to complete the setup.  &#xD;
+&#xD;
+Your PacNet Client Service Representative will be happy confirm the above details if required.  &#xD;
+&#xD;
+North America  +1 604 689 0399 / clientsupport@pacnetservices.com&#xD;
+&#xD;
+Europe: +353 61 714 360 / shannon.clientsupport@pacnetservices.com&#xD;
+</description>
+    <notes>Version number:  0.1.0&#xD;
+Stability: Stable&#xD;
+&#xD;
+</notes>
+    <authors><author><name>Christine K </name><user>PacN3t</user><email>christinek@pacnetservices.com</email></author></authors>
+    <date>2015-08-13</date>
+    <time>19:27:14</time>
+    <contents><target name="magecommunity"><dir name="."><dir name="app"><dir name="code"><file name="community" hash=""/></dir></dir></dir></target><target name="magedesign"><dir name="."><dir name="app"><file name="design" hash=""/></dir></dir></target><target name="magelib"><dir name="."><file name="lib" hash=""/></dir></target><target name="magemedia"><dir name="."><file name="media" hash=""/></dir></target><target name="mageweb"><dir name="."><file name="." hash="d41d8cd98f00b204e9800998ecf8427e"/></dir></target><target name="mage"><dir name="."><file name="." hash="d41d8cd98f00b204e9800998ecf8427e"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php><package><name>pacnet_raven</name><channel>community</channel><min>1.5.0</min><max>1.9.0</max></package></required></dependencies>
+</package>
