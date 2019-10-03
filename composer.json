@@ -1,17 +1,5 @@
 {
-    "name": "OpenMageModuleFostering/pacnet_raven",
-    "type": "magento-module",
-    "license": "MIT-License-(MIT)",
-    "homepage": "",
-    "description": "PacNet's Raven Payment Gateway extension integrates Raven API and/or
-MarketDirect payments to your Magento store.",
-    "authors": [
-    {
-        "name": "Joerg Beekmann",
-        "email": "christinek@pacnetservices.com"
-    }
-],
-    "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+    "keywords": [
+        "openmage-module"
+    ]
 }
